@@ -8,7 +8,7 @@ INNER JOIN products ON products.product_id= orders.primary_product_id;
 
 
 
-SELECT device_type,SUM(price_usd) AS total_revenue FROM 
+SELECT device_type,SUM(price_usd) AS total_revenue FROM orders
 INNER JOIN website_sessions ON orders.website_session_id= website_sessions.user_id 
 INNER JOIN products ON products.product_id= orders.primary_product_id 
 GROUP BY device_type ORDER BY total_revenue DESC;
